@@ -54,30 +54,30 @@ module.exports = {
             return;
         }
 
-        var cu = "No recent scans...";
+        var nr = "No recent scans...";
         if (usuario.length !== 0) {
-            cu = "";
+            nr = "";
             for (i = 0; i < usuario.length; i++) {
                 if (usuario[i].expired == true) {
-                    cu += `${usuario[i].pin} ― Expired\n`;
+                    nr += `${usuario[i].pin} ― Expired\n`;
                     continue;
                 }
                 if (!(usuario[i].pc)) {
-                    cu += `${usuario[i].pin} ― Not used\n`;
+                    nr += `${usuario[i].pin} ― Not used\n`;
                     continue;
                 }
                 if (i == usuario.length - 1) {
-                    cu += `${usuario[i].pin} ― Complete [${usuario[i].horario}]`;
+                    nr += `${usuario[i].pin} ― Complete [${usuario[i].horario}]`;
                     break;
                 }
 
-                cu += `${usuario[i].pin} ― Complete [${usuario[i].horario}]\n`;
+                nr += `${usuario[i].pin} ― Complete [${usuario[i].horario}]\n`;
 
             }
         }
         const scansEmbed = new Discord.MessageEmbed()
             .setAuthor(message.author.username, message.author.displayAvatarURL())
-            .setDescription(`Old scans:\n\`\`\`${cu}\`\`\``)
+            .setDescription(`Old scans:\n\`\`\`${nr}\`\`\``)
         message.channel.send(scansEmbed);
 
 
