@@ -10,7 +10,7 @@ module.exports = {
 
         let string = args.join(" ");
 
-        fetch("https://api.haumea.club/penis.php?string="+string)
+        fetch("https://api.haumea.club/api.php?string="+string)
             .then(res => res.text())
             .then(text => {
             
