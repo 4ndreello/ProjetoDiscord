@@ -25,4 +25,4 @@ for (const file of eventFiles) {
 }
 
 mongoose.init();
-client.login('ODUwNDM1MDQyODgyMDkzMDc2.YLprWg.XF_nVe4ZktJhOr4bdilHujI9nmQ');
+client.login();
